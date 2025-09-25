@@ -23,7 +23,7 @@ const App = () => {
       id: 3,
       title: "3. Afilado y Pulido",
       text: "La hoja toma su filo final en las piedras de afilar, una tarea que requiere precisión y paciencia. Cada cuchillo es pulido a mano para revelar la belleza de su veta y acabado.",
-      imageUrl: "https://placehold.co/600x400/bcaaa4/ffffff?text=Afilado",
+      imageUrl: "/imagen-5.jpeg",
     },
     {
       id: 4,
@@ -38,25 +38,26 @@ const App = () => {
       id: 1,
       name: "El Caminante",
       description: "Un cuchillo versátil con una hoja de acero al carbono y mango de nogal.",
-      imageUrl: "https://placehold.co/400x400/795548/ffffff?text=Cuchillo+1",
+      imageUrl: "/imagen-1.png",
+      
     },
     {
       id: 2,
       name: "Sombra Nocturna",
       description: "Hoja forjada con acero de damasco, un patrón único que cuenta una historia.",
-      imageUrl: "https://placehold.co/400x400/5d4037/ffffff?text=Cuchillo+2",
+      imageUrl: "/imagen-2.png",
     },
     {
       id: 3,
       name: "Corazón de Fuego",
       description: "Diseño robusto para trabajo pesado, con empuñadura ergonómica y segura.",
-      imageUrl: "https://placehold.co/400x400/4e342e/ffffff?text=Cuchillo+3",
+      imageUrl: "/imagen-3.png",
     },
     {
       id: 4,
       name: "El Caballero",
       description: "Una pieza elegante y ligera, perfecta para el uso diario en la cocina.",
-      imageUrl: "https://placehold.co/400x400/3e2723/ffffff?text=Cuchillo+4",
+      imageUrl: "/imagen-4.png",
     },
   ];
 
