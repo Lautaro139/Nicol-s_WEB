@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 // Componente principal de la aplicación
 const App = () => {
   // Estado para controlar la vista previa (preview) del cuchillo
@@ -11,13 +10,13 @@ const App = () => {
       id: 1,
       title: "1. Forja y Martillado",
       text: "El viaje comienza con el acero, calentado al rojo vivo en la fragua. Con cada golpe de martillo, se le da forma y carácter, eliminando impurezas y fortaleciendo el metal.",
-      imageUrl: "https://placehold.co/600x400/8d6e63/ffffff?text=Forja",
+      imageUrl: "/imagen-6.jpeg",
     },
     {
       id: 2,
       title: "2. Temple y Revenido",
       text: "Una vez formada la hoja, se sumerge en aceite o agua para endurecerla. Luego, un proceso de revenido a baja temperatura le otorga la resistencia y flexibilidad necesarias.",
-      imageUrl: "https://placehold.co/600x400/a1887f/ffffff?text=Temple",
+      imageUrl: "/imagen-7.jpeg",
     },
     {
       id: 3,
@@ -29,7 +28,7 @@ const App = () => {
       id: 4,
       title: "4. Acabado y Empuñadura",
       text: "Se selecciona la madera o material de la empuñadura, tallado y ajustado a la perfección. Los detalles finales, como los remaches o la funda, sellan la identidad de la pieza.",
-      imageUrl: "https://placehold.co/600x400/d7ccc8/ffffff?text=Acabado",
+      imageUrl: "/imagen-8.png",
     },
   ];
 
@@ -70,8 +69,14 @@ const App = () => {
       <section className="relative h-screen flex flex-col items-center justify-center text-center p-4">
         <div className="absolute inset-0 bg-cover bg-center opacity-60" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1596796332152-628f5217646a?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}></div>
         <div className="relative z-10 bg-white/50 p-6 sm:p-12 rounded-xl shadow-2xl backdrop-blur-sm">
+         <a href="https://www.instagram.com/nc.cuchillos/">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram">
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+    <line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/>
+</svg></a> 
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-4">
-            Cuchillos con Alma
+            Nicolas Castaño Cuchillos
           </h1>
           <p className="text-xl sm:text-2xl font-light max-w-2xl mx-auto">
             Donde el metal y el fuego se unen para crear herramientas con historia.
@@ -140,9 +145,8 @@ const App = () => {
 
       {/* Footer */}
       <footer className="bg-stone-900 text-white py-12 px-4">
-        <div className="container mx-auto text-center">
-          <p className="text-sm">© 2024 Cuchillos con Alma. Todos los derechos reservados.</p>
-        </div>
+        <div className="container mx-auto max-w-5xl"></div>
+<p className="text-sm">© 2025 NC-Cuchillos. Los mejores cuchillos artesanales de Artigas.</p>
       </footer>
     </div>
   );
