@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 // Componente principal de la aplicación
 const App = () => {
   // Estado para controlar la vista previa (preview) del cuchillo
@@ -69,12 +70,14 @@ const App = () => {
       <section className="relative h-screen flex flex-col items-center justify-center text-center p-4">
         <div className="absolute inset-0 bg-cover bg-center opacity-60" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1596796332152-628f5217646a?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}></div>
         <div className="relative z-10 bg-white/50 p-6 sm:p-12 rounded-xl shadow-2xl backdrop-blur-sm">
-         <a href="https://www.instagram.com/nc.cuchillos/">
-       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram">
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-    <line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/>
-</svg></a> 
+         {/* Logo principal */}
+          <img 
+            src="/logo.png" 
+            alt="Cuchillos con Alma Logo" 
+            className="w-24 h-24 sm:w-32 sm:h-32 mb-4 drop-shadow-lg" 
+            onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/128x128/ffffff/000000?text=Logo"; }}
+          />
+        
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-4">
             Nicolas Castaño Cuchillos
           </h1>
@@ -83,6 +86,21 @@ const App = () => {
           </p>
         </div>
       </section>
+ {/* --------------------------- NUEVA SECCIÓN: BIOGRAFÍA --------------------------- */}
+      <section id="about" className="py-24 px-4 bg-white">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl font-extrabold text-stone-900 mb-6">Acerca de Nosotros</h2>
+          <div className="text-lg text-stone-700 space-y-6 leading-relaxed">
+            <p>
+              Somos artesanos de la forja, dedicados a la creación de cuchillos que son más que herramientas: son piezas de arte funcionales. Cada cuchillo que sale de nuestro taller lleva la impronta del fuego, la paciencia del martillo y el alma de su creador. Nuestra pasión es fusionar la técnica ancestral con diseños modernos y ergonómicos.
+            </p>
+            <p>
+              En "Cuchillos con Alma", creemos que un cuchillo debe ser una extensión de quien lo usa, ofreciendo un equilibrio perfecto entre **belleza, filo y durabilidad**. Utilizamos solo los mejores aceros y maderas exóticas, garantizando una pieza que te acompañará toda la vida, lista para pasar a la próxima generación.
+            </p>
+          </div>
+        </div>
+      </section>
+      {/* -------------------------------------------------------------------------------- */}
 
       {/* Sección del Proceso de Fabricación */}
       <section id="process" className="py-20 px-4">
@@ -146,10 +164,16 @@ const App = () => {
       {/* Footer */}
       <footer className="bg-stone-900 text-white py-12 px-4">
         <div className="container mx-auto max-w-5xl"></div>
+        <a href="https://www.instagram.com/nc.cuchillos/">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram">
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+    <line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/>
+</svg></a>
 <p className="text-sm">© 2025 NC-Cuchillos. Los mejores cuchillos artesanales de Artigas.</p>
       </footer>
     </div>
   );
 };
-
+ 
 export default App;
