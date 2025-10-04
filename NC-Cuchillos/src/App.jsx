@@ -1,8 +1,28 @@
 import React, { useState, useEffect } from 'react';
+ 
 // Componente principal de la aplicación
 const App = () => {
   // Estado para controlar la vista previa (preview) del cuchillo
   const [previewKnife, setPreviewKnife] = useState(null);
+const AboutSection = () => (
+  <section id="about" className="py-20 px-4 bg-white">
+      <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-amber-700">Nuestra Historia: La Forja de un Legado</h2>
+          <p className="text-lg leading-relaxed text-stone-700 mb-6">
+              En **Cuchillos Alma**, nuestra historia no comienza en una oficina, sino en el calor de la fragua. Nacimos de una profunda pasión por la herrería tradicional y la creencia inquebrantable de que una herramienta debe ser una obra de arte funcional, una extensión de la mano que la empuña.
+          </p>
+          <p className="text-lg leading-relaxed text-stone-700 italic">
+              Hace más de una década, nuestro taller se estableció con el firme propósito de rescatar técnicas ancestrales de forja. Aquí, el acero crudo pasa por un ritual de transformación: se calienta al rojo vivo, se purifica bajo el golpe rítmico del martillo y se somete al temple, un proceso vital que le otorga su inigualable dureza y flexibilidad. No utilizamos producción masiva; cada cuchillo es forjado individualmente, garantizando que cada pieza sea única, tenga carácter propio y una calidad que trasciende el tiempo.
+          </p>
+          <a 
+              href="#gallery" 
+              className="inline-block mt-8 px-6 py-3 bg-stone-800 text-white font-semibold rounded-full shadow-lg hover:bg-amber-700 transition-colors transform hover:scale-105"
+          >
+              Ver Cuchillos Forjados
+          </a>
+      </div>
+  </section>
+);
 
   // Datos de ejemplo para las secciones
   const processSteps = [
