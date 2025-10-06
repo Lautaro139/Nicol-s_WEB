@@ -1,5 +1,48 @@
 import React, { useState, useEffect } from 'react';
- 
+import ReactDOM from 'react-dom/client';
+// Icono de Cerrar (X)
+const IconX = ({ size = 24, className = "" }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M18 6L6 18"></path>
+    <path d="M6 6L18 18"></path>
+  </svg>
+);
+
+// Icono de Flecha Arriba Derecha (ArrowUpRight)
+const IconArrowUpRight = ({ size = 20, className = "" }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M7 7l10 10"></path>
+    <path d="M17 7L7 17"></path>
+    <path d="M17 7h-5"></path>
+    <path d="M17 7v5"></path>
+  </svg>
+);
+// ===================================
+const instagramLogoUrl = "https://i.imgur.com/uRj0p69.png";
+const instagramProfileUrl = "https://www.instagram.com/tu_perfil_de_instagram/"; // !!! CAMBIA ESTO POR TU PERFIL REAL !!!
+
 // Componente principal de la aplicación
 const App = () => {
   // Estado para controlar la vista previa (preview) del cuchillo
@@ -23,6 +66,29 @@ const AboutSection = () => (
       </div>
   </section>
 );
+
+
+  //   // === SECCIÓN DE BIOGRAFÍA ===
+  // const AboutSection = () => (
+  //   <section id="about" className="py-20 px-4 bg-white">
+  //       <div className="container mx-auto max-w-4xl text-center">
+  //           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-amber-700">Nuestra Historia: La Forja de un Legado</h2>
+  //           <p className="text-lg leading-relaxed text-stone-700 mb-6">
+  //               En **Cuchillos Alma**, nuestra historia no comienza en una oficina, sino en el calor de la fragua. Nacimos de una profunda pasión por la herrería tradicional y la creencia inquebrantable de que una herramienta debe ser una obra de arte funcional, una extensión de la mano que la empuña.
+  //           </p>
+  //           <p className="text-lg leading-relaxed text-stone-700 italic">
+  //               Hace más de una década, nuestro taller se estableció con el firme propósito de rescatar técnicas ancestrales de forja. Aquí, el acero crudo pasa por un ritual de transformación: se calienta al rojo vivo, se purifica bajo el golpe rítmico del martillo y se somete al temple, un proceso vital que le otorga su inigualable dureza y flexibilidad. No utilizamos producción masiva; cada cuchillo es forjado individualmente, garantizando que cada pieza sea única, tenga carácter propio y una calidad que trasciende el tiempo.
+  //           </p>
+  //           <a 
+  //               href="#gallery" 
+  //               className="inline-block mt-8 px-6 py-3 bg-stone-800 text-white font-semibold rounded-full shadow-lg hover:bg-amber-700 transition-colors transform hover:scale-105"
+  //           >
+  //               Ver Cuchillos Forjados
+  //           </a>
+  //       </div>
+  //   </section>
+  // );
+
 
   // Datos de ejemplo para las secciones
   const processSteps = [
@@ -80,21 +146,19 @@ const AboutSection = () => (
     },
   ];
 
-  return (
-    <div className="bg-stone-50 text-stone-900 font-sans">
-      {/* Carga de Tailwind CSS */}
-      <script src="https://cdn.tailwindcss.com"></script>
 
-      {/* Hero Section */}
+  // ------------ Seccion Inicio --------------
+  const HeroSection = () => (
       <section className="relative h-screen flex flex-col items-center justify-center text-center p-4">
         <div className="absolute inset-0 bg-cover bg-center opacity-60" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1596796332152-628f5217646a?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}></div>
         <div className="relative z-10 bg-white/50 p-6 sm:p-12 rounded-xl shadow-2xl backdrop-blur-sm">
          <a href="https://www.instagram.com/nc.cuchillos/">
-       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram">
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-    <line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/>
-</svg></a> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/>
+          </svg>
+        </a>
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-4">
             Nicolas Castaño Cuchillos
           </h1>
@@ -103,13 +167,15 @@ const AboutSection = () => (
           </p>
         </div>
       </section>
+  );
 
-      {/* Sección del Proceso de Fabricación */}
-      <section id="process" className="py-20 px-4">
+  // -------- Seccion Proceso de Fabricacion -----------
+  const ProcessSection = ({proseso}) => (
+  <section id="process" className="py-20 px-4">
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Nuestro Proceso de Creación</h2>
           <div className="space-y-16">
-            {processSteps.map((step, index) => (
+            {proseso.map((step, index) => (
               <div key={step.id} className={`flex flex-col sm:flex-row items-center gap-8 ${index % 2 !== 0 ? 'sm:flex-row-reverse' : ''}`}>
                 <div className="flex-1 w-full sm:w-1/2">
                   <img src={step.imageUrl} alt={step.title} className="w-full h-auto rounded-xl shadow-lg" onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/8d6e63/ffffff?text=Imagen+no+disponible"; }} />
@@ -123,6 +189,24 @@ const AboutSection = () => (
           </div>
         </div>
       </section>
+  
+  );
+
+
+  return (
+    <div className="bg-stone-50 text-stone-900 font-sans">
+      {/* Carga de Tailwind CSS */}
+      <script src="https://cdn.tailwindcss.com"></script>
+
+      {/* Hero Section */}
+      <HeroSection />
+
+      {/* Sección de Biografía */}
+      <AboutSection />
+
+      {/* Sección del Proceso de Fabricación */}
+      <ProcessSection proceso={processSteps} />
+      
 
       {/* Sección de Galería y Preview */}
       <section id="gallery" className="py-20 px-4 bg-stone-100">
@@ -170,6 +254,7 @@ const AboutSection = () => (
       </footer>
     </div>
   );
+
 };
 
 export default App;
