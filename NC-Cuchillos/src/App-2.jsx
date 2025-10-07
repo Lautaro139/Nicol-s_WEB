@@ -258,7 +258,7 @@
                   <p className="text-xl sm:text-2xl font-light max-w-2xl mx-auto mb-8">
                     Donde el metal y el fuego se unen para crear herramientas con historia.
                   </p>
-                  {/* Botón añadido para ir a la biografía */}
+                  {/* Botprocessón añadido para ir a la biografía */}
                   <a 
                     href="#about" 
                     className="inline-block px-8 py-3 bg-stone-800 text-white font-semibold rounded-full shadow-xl hover:bg-amber-700 transition-colors transform hover:scale-105"

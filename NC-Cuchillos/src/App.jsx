@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
+
 // Icono de Cerrar (X)
 const IconX = ({ size = 24, className = "" }) => (
   <svg 
@@ -39,6 +40,7 @@ const IconArrowUpRight = ({ size = 20, className = "" }) => (
     <path d="M17 7v5"></path>
   </svg>
 );
+
 // ===================================
 const instagramLogoUrl = "https://i.imgur.com/uRj0p69.png";
 const instagramProfileUrl = "https://www.instagram.com/tu_perfil_de_instagram/"; // !!! CAMBIA ESTO POR TU PERFIL REAL !!!
@@ -47,76 +49,32 @@ const instagramProfileUrl = "https://www.instagram.com/tu_perfil_de_instagram/";
 const App = () => {
   // Estado para controlar la vista previa (preview) del cuchillo
   const [previewKnife, setPreviewKnife] = useState(null);
-const AboutSection = () => (
-  <section id="about" className="py-20 px-4 bg-white">
-      <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-amber-700">Nuestra Historia: La Forja de un Legado</h2>
-          <p className="text-lg leading-relaxed text-stone-700 mb-6">
-              En **Cuchillos Alma**, nuestra historia no comienza en una oficina, sino en el calor de la fragua. Nacimos de una profunda pasión por la herrería tradicional y la creencia inquebrantable de que una herramienta debe ser una obra de arte funcional, una extensión de la mano que la empuña.
-          </p>
-          <p className="text-lg leading-relaxed text-stone-700 italic">
-              Hace más de una década, nuestro taller se estableció con el firme propósito de rescatar técnicas ancestrales de forja. Aquí, el acero crudo pasa por un ritual de transformación: se calienta al rojo vivo, se purifica bajo el golpe rítmico del martillo y se somete al temple, un proceso vital que le otorga su inigualable dureza y flexibilidad. No utilizamos producción masiva; cada cuchillo es forjado individualmente, garantizando que cada pieza sea única, tenga carácter propio y una calidad que trasciende el tiempo.
-          </p>
-          <a 
-              href="#gallery" 
-              className="inline-block mt-8 px-6 py-3 bg-stone-800 text-white font-semibold rounded-full shadow-lg hover:bg-amber-700 transition-colors transform hover:scale-105"
-          >
-              Ver Cuchillos Forjados
-          </a>
-      </div>
-  </section>
-);
 
 
-  //   // === SECCIÓN DE BIOGRAFÍA ===
-  // const AboutSection = () => (
-  //   <section id="about" className="py-20 px-4 bg-white">
-  //       <div className="container mx-auto max-w-4xl text-center">
-  //           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-amber-700">Nuestra Historia: La Forja de un Legado</h2>
-  //           <p className="text-lg leading-relaxed text-stone-700 mb-6">
-  //               En **Cuchillos Alma**, nuestra historia no comienza en una oficina, sino en el calor de la fragua. Nacimos de una profunda pasión por la herrería tradicional y la creencia inquebrantable de que una herramienta debe ser una obra de arte funcional, una extensión de la mano que la empuña.
-  //           </p>
-  //           <p className="text-lg leading-relaxed text-stone-700 italic">
-  //               Hace más de una década, nuestro taller se estableció con el firme propósito de rescatar técnicas ancestrales de forja. Aquí, el acero crudo pasa por un ritual de transformación: se calienta al rojo vivo, se purifica bajo el golpe rítmico del martillo y se somete al temple, un proceso vital que le otorga su inigualable dureza y flexibilidad. No utilizamos producción masiva; cada cuchillo es forjado individualmente, garantizando que cada pieza sea única, tenga carácter propio y una calidad que trasciende el tiempo.
-  //           </p>
-  //           <a 
-  //               href="#gallery" 
-  //               className="inline-block mt-8 px-6 py-3 bg-stone-800 text-white font-semibold rounded-full shadow-lg hover:bg-amber-700 transition-colors transform hover:scale-105"
-  //           >
-  //               Ver Cuchillos Forjados
-  //           </a>
-  //       </div>
-  //   </section>
-  // );
+  // ------------ Seccion Biografia --------------
+  const AboutSection = () => (
+    <section id="about" className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-amber-700">Nuestra Historia: La Forja de un Legado</h2>
+            <p className="text-lg leading-relaxed text-stone-700 mb-6">
+                En **Cuchillos Alma**, nuestra historia no comienza en una oficina, sino en el calor de la fragua. Nacimos de una profunda pasión por la herrería tradicional y la creencia inquebrantable de que una herramienta debe ser una obra de arte funcional, una extensión de la mano que la empuña.
+            </p>
+            <p className="text-lg leading-relaxed text-stone-700 italic">
+                Hace más de una década, nuestro taller se estableció con el firme propósito de rescatar técnicas ancestrales de forja. Aquí, el acero crudo pasa por un ritual de transformación: se calienta al rojo vivo, se purifica bajo el golpe rítmico del martillo y se somete al temple, un proceso vital que le otorga su inigualable dureza y flexibilidad. No utilizamos producción masiva; cada cuchillo es forjado individualmente, garantizando que cada pieza sea única, tenga carácter propio y una calidad que trasciende el tiempo.
+            </p>
+            <a 
+                href="#gallery" 
+                className="inline-block mt-8 px-6 py-3 bg-stone-800 text-white font-semibold rounded-full shadow-lg hover:bg-amber-700 transition-colors transform hover:scale-105"
+            >
+                Ver Cuchillos Forjados
+            </a>
+        </div>
+    </section>
+  );
+
 
 
   // Datos de ejemplo para las secciones
-  const processSteps = [
-    {
-      id: 1,
-      title: "1. Forja y Martillado",
-      text: "El viaje comienza con el acero, calentado al rojo vivo en la fragua. Con cada golpe de martillo, se le da forma y carácter, eliminando impurezas y fortaleciendo el metal.",
-      imageUrl: "/imagen-6.jpeg",
-    },
-    {
-      id: 2,
-      title: "2. Temple y Revenido",
-      text: "Una vez formada la hoja, se sumerge en aceite o agua para endurecerla. Luego, un proceso de revenido a baja temperatura le otorga la resistencia y flexibilidad necesarias.",
-      imageUrl: "/imagen-7.jpeg",
-    },
-    {
-      id: 3,
-      title: "3. Afilado y Pulido",
-      text: "La hoja toma su filo final en las piedras de afilar, una tarea que requiere precisión y paciencia. Cada cuchillo es pulido a mano para revelar la belleza de su veta y acabado.",
-      imageUrl: "/imagen-5.jpeg",
-    },
-    {
-      id: 4,
-      title: "4. Acabado y Empuñadura",
-      text: "Se selecciona la madera o material de la empuñadura, tallado y ajustado a la perfección. Los detalles finales, como los remaches o la funda, sellan la identidad de la pieza.",
-      imageUrl: "/imagen-8.png",
-    },
-  ];
 
   const galleryKnives = [
     {
@@ -146,7 +104,6 @@ const AboutSection = () => (
     },
   ];
 
-
   // ------------ Seccion Inicio --------------
   const HeroSection = () => (
       <section className="relative h-screen flex flex-col items-center justify-center text-center p-4">
@@ -170,12 +127,14 @@ const AboutSection = () => (
   );
 
   // -------- Seccion Proceso de Fabricacion -----------
-  const ProcessSection = ({proseso}) => (
-  <section id="process" className="py-20 px-4">
+
+
+  const ProcessSection = ({procesocol}) => (
+    <section id="process" className="py-20 px-4">
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Nuestro Proceso de Creación</h2>
           <div className="space-y-16">
-            {proseso.map((step, index) => (
+            {procesocol.map((step, index) => (
               <div key={step.id} className={`flex flex-col sm:flex-row items-center gap-8 ${index % 2 !== 0 ? 'sm:flex-row-reverse' : ''}`}>
                 <div className="flex-1 w-full sm:w-1/2">
                   <img src={step.imageUrl} alt={step.title} className="w-full h-auto rounded-xl shadow-lg" onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/8d6e63/ffffff?text=Imagen+no+disponible"; }} />
@@ -192,6 +151,32 @@ const AboutSection = () => (
   
   );
 
+  const processSteps = [
+    {
+      id: 1,
+      title: "1. Forja y Martillado",
+      text: "El viaje comienza con el acero, calentado al rojo vivo en la fragua. Con cada golpe de martillo, se le da forma y carácter, eliminando impurezas y fortaleciendo el metal.",
+      imageUrl: "/imagen-6.jpeg",
+    },
+    {
+      id: 2,
+      title: "2. Temple y Revenido",
+      text: "Una vez formada la hoja, se sumerge en aceite o agua para endurecerla. Luego, un proceso de revenido a baja temperatura le otorga la resistencia y flexibilidad necesarias.",
+      imageUrl: "/imagen-7.jpeg",
+    },
+    {
+      id: 3,
+      title: "3. Afilado y Pulido",
+      text: "La hoja toma su filo final en las piedras de afilar, una tarea que requiere precisión y paciencia. Cada cuchillo es pulido a mano para revelar la belleza de su veta y acabado.",
+      imageUrl: "/imagen-5.jpeg",
+    },
+    {
+      id: 4,
+      title: "4. Acabado y Empuñadura",
+      text: "Se selecciona la madera o material de la empuñadura, tallado y ajustado a la perfección. Los detalles finales, como los remaches o la funda, sellan la identidad de la pieza.",
+      imageUrl: "/imagen-8.png",
+    },
+  ];
 
   return (
     <div className="bg-stone-50 text-stone-900 font-sans">
@@ -205,7 +190,7 @@ const AboutSection = () => (
       <AboutSection />
 
       {/* Sección del Proceso de Fabricación */}
-      <ProcessSection proceso={processSteps} />
+      <ProcessSection procesocol={processSteps} />
       
 
       {/* Sección de Galería y Preview */}
@@ -250,7 +235,7 @@ const AboutSection = () => (
       {/* Footer */}
       <footer className="bg-stone-900 text-white py-12 px-4">
         <div className="container mx-auto max-w-5xl"></div>
-<p className="text-sm">© 2025 NC-Cuchillos. Los mejores cuchillos artesanales de Artigas.</p>
+        <p className="text-sm">© 2025 NC-Cuchillos. Los mejores cuchillos artesanales de Artigas.</p>
       </footer>
     </div>
   );
