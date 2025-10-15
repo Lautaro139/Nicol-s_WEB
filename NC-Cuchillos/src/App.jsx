@@ -124,31 +124,32 @@ Nuestro negocio busca que todos esos fanáticos de los cuchillos puedan tener un
   const galleryKnives = [
     {
       id: 1,
-      name: "El Caminante",
+      name: "",
       description: "Un cuchillo versátil con una hoja de acero al carbono y mango de nogal.",
       imageUrl: "/imagen-1.png",
       
     },
     {
       id: 2,
-      name: "Sombra Nocturna",
+      name: "",
       description: "Hoja forjada con acero de damasco, un patrón único que cuenta una historia.",
       imageUrl: "/imagen-2.png",
     },
     {
       id: 3,
-      name: "Corazón de Fuego",
+      name: "",
       description: "Diseño robusto para trabajo pesado, con empuñadura ergonómica y segura.",
       imageUrl: "/imagen-3.png",
     },
     {
       id: 4,
-      name: "El Caballero",
+      name: "",
       description: "Una pieza elegante y ligera, perfecta para el uso diario en la cocina.",
       imageUrl: "/imagen-4.png",
     },
   ];
   
+
   // ------------ Seccion Inicio --------------
   const HeroSection = () => (
      <section className="relative h-screen flex flex-col items-center justify-center text-center p-4">
@@ -156,14 +157,21 @@ Nuestro negocio busca que todos esos fanáticos de los cuchillos puedan tener un
        <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1596796332152-628f5217646a?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}></div>
        {/* Contenedor de texto más oscuro y contrastante */}
        <div className="relative z-10 bg-black/70 p-6 sm:p-12 rounded-xl shadow-2xl backdrop-blur-md border border-gray-700">
-         {/* Icono de Instagram */}
-         <a href="https://www.instagram.com/nc.cuchillos/" className="text-red-500 hover:text-red-400 inline-block mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram">
-            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-           <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-           <line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/>
-          </svg>
-         </a>
+
+ {/* INICIO: Logo Centrado Directamente */}
+            <div className="mb-8"> 
+                
+                {/* 1. LOGO DE LA EMPRESA 
+                    Usamos 'mx-auto' para centrar la imagen como un elemento de bloque.
+                    'block' es necesario para que 'mx-auto' funcione. 
+                */}
+                <img 
+                    src="/logo.png"
+                    alt="Logo de Nicolas Castaño Cuchillos" 
+                    className="w-20 h-20 rounded-full border-4 border-white object-cover shadow-lg block mx-auto"
+                />
+            </div>
+            {/* FIN: Logo Centrado Directamente */}
         
           {/* Título principal en blanco */}
          <h1 
@@ -173,7 +181,7 @@ Nuestro negocio busca que todos esos fanáticos de los cuchillos puedan tener un
         </h1>
          {/* Subtítulo en gris claro */}
           <p className="text-xl sm:text-2xl font-medium max-w-2xl mx-auto text-gray-300">
-            Donde el metal y el fuego se unen para crear herramientas con historia.
+            Los mejores cuchillos artesanales de la ciudad de Artigas
           </p>
         </div>
       </section>
