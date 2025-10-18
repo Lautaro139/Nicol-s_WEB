@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 
 
+
+
+
 // === COMPONENTES DE ICONOS ===
 
 
@@ -153,10 +156,10 @@ Nuestro negocio busca que todos esos fanáticos de los cuchillos puedan tener un
   // ------------ Seccion Inicio --------------
   const HeroSection = () => (
      <section className="relative h-screen flex flex-col items-center justify-center text-center p-4">
-       {/* Fondo más oscuro */}
-       <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1596796332152-628f5217646a?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}></div>
-       {/* Contenedor de texto más oscuro y contrastante */}
-       <div className="relative z-10 bg-black/70 p-6 sm:p-12 rounded-xl shadow-2xl backdrop-blur-md border border-gray-700">
+{/* Fondo más oscuro */}
+<div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1596796332152-628f5217646a?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}></div>
+{/* Contenedor de texto más oscuro y contrastante */}
+<div className="relative z-10 bg-black/70 p-6 sm:p-12 rounded-xl shadow-2xl backdrop-blur-md border border-gray-700">
 
  {/* INICIO: Logo Centrado Directamente */}
             <div className="mb-8"> 
@@ -173,19 +176,19 @@ Nuestro negocio busca que todos esos fanáticos de los cuchillos puedan tener un
             </div>
             {/* FIN: Logo Centrado Directamente */}
         
-          {/* Título principal en blanco */}
-         <h1 
-          className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-4 text-white select-none"
-        >
-          Nicolas Castaño Cuchillos
-        </h1>
-         {/* Subtítulo en gris claro */}
-          <p className="text-xl sm:text-2xl font-medium max-w-2xl mx-auto text-gray-300">
-            Los mejores cuchillos artesanales de la ciudad de Artigas
-          </p>
-        </div>
-      </section>
-  );
+         {/* Título principal en blanco */}
+<h1 
+ className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-4 text-white select-none"
+ >
+ Nicolas Castaño Cuchillos
+ </h1>
+{/* Subtítulo en gris claro */}
+ <p className="text-xl sm:text-2xl font-medium max-w-2xl mx-auto text-gray-300">
+ Los mejores cuchillos artesanales de la ciudad de Artigas
+ </p>
+ </div>
+ </section>
+  );
 
     // -------- Seccion Proceso de Fabricacion -----------
 
