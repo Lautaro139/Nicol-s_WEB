@@ -73,7 +73,7 @@ const instagramLogoUrl = "https://i.imgur.com/uRj0p69.png";
 const instagramProfileUrl = "https://www.instagram.com/tu_perfil_de_instagram/"; // !!! CAMBIA ESTO POR TU PERFIL REAL !!!
 
 // CONSTANTES DE WHATSAPP (AÑADIDO)
-const whatsappNumber = "+598 97 136 348"; // !!! CAMBIA ESTO: Usa tu número real (sin + ni guiones)
+const whatsappNumber = "59897136348"; // Sacamos simbolos "+" y los espacio vacion son innecesarios para buscar numeros de contactos
 const whatsappMessage = "Hola, estoy navegando en la web de NC Cuchillos y me gustaría pedir una cotización.";
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -113,7 +113,7 @@ Nuestro negocio busca que todos esos fanáticos de los cuchillos puedan tener un
             <a 
                 href="#gallery" 
                 className="inline-block mt-8 px-8 py-3 bg-red-600 text-white font-semibold rounded-full shadow-xl shadow-red-600/30 hover:bg-red-700 transition-colors transform hover:scale-105"
-            >
+      >
                 Ver Cuchillos Forjados
             </a>
         </div>
@@ -260,36 +260,37 @@ Nuestro negocio busca que todos esos fanáticos de los cuchillos puedan tener un
       
 
        {/* Sección de Galería y Preview */}
-      <section id="gallery" className="py-20 px-4 bg-gray-950">
-        <div className="container mx-auto max-w-5xl">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-white">Nuestras Creaciones</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {galleryKnives.map((knife) => (
-              <div
-                key={knife.id}
-                // Tarjetas oscuras con efecto de brillo en hover
-           className="relative group cursor-pointer bg-gray-800 rounded-xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-red-500/50 border border-gray-700"
-                onMouseEnter={() => setPreviewKnife(knife)}
-                onMouseLeave={() => setPreviewKnife(null)}
-              >
-                <img src={knife.imageUrl} alt={knife.name} className="w-full h-auto object-cover" onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x400/374151/ffffff?text=Cuchillo"; }} />
-                <div className="p-4 text-center">
-                  <h3 className="text-xl font-semibold text-white">{knife.name}</h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+   <section id="gallery" className="py-20 px-4 bg-gray-950">
+    <div className="container mx-auto max-w-5xl">
+     <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-white">Nuestras Creaciones</h2>
+     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {galleryKnives.map((knife) => (
+       <div
+        key={knife.id}
+        // Tarjetas oscuras con efecto de brillo en hover
+      className="bg-gray-800 rounded-xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-red-500/50 border border-gray-700"
+        onClick={() => setPreviewKnife(knife)}
+        // onMouseLeave={() => setPreviewKnife(null)} esto no va, es el causante de que las ventanas emergentes pisquen
+       >
+        <img src={knife.imageUrl} alt={knife.name} className="w-full h-auto object-cover" onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x400/374151/ffffff?text="; }} />
+        <div className="p-6 text-center">
+         <h2 className="text-xl font-semibold text-white">{knife.name}</h2>
+         <p>Pulsa para mas detalles</p>
+        </div>
+       </div>
+      ))}
+     </div>
+    </div>
 
         {/* Modal de Preview (Vista Previa) */}
         {previewKnife && (
           <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50">
-            <div className="bg-white rounded-xl p-6 max-w-lg w-full relative shadow-2xl">
+            <div className="bg-gray-700 rounded-xl p-1 max-w-lg w-full relative shadow-2xl hover:shadow-red-500/50">
+              <img src={previewKnife.imageUrl} alt={previewKnife.name} className="w-full h-auto rounded-lg" />
               <h3 className="text-3xl font-bold mb-4">{previewKnife.name}</h3>
-              <p className="text-lg text-gray-700 mb-6">{previewKnife.description}</p>
-              <img src={previewKnife.imageUrl} alt={previewKnife.name} className="w-full h-auto rounded-lg shadow-lg" />
+              <p className="text-lg text-white mb-6">{previewKnife.description}</p>
               <button
-                className="mt-6 px-6 py-2 bg-stone-800 text-white rounded-full hover:bg-stone-900 transition-colors"
+                className="mt-10 px-8 py-2 bg-stone-800 text-white rounded-full hover:bg-stone-900 transition-colors"
                 onClick={() => setPreviewKnife(null)}
               >
                 Cerrar
@@ -323,10 +324,10 @@ Nuestro negocio busca que todos esos fanáticos de los cuchillos puedan tener un
                 </a>
             </div>
         </div>
-        <p className="text-sm text-center text-gray-500 mt-4">© 2025 NC-Cuchillos. Los mejores cuchillos artesanales de Artigas.</p>
-       </footer>
-    </div>
-  );
+    <p className="text-sm text-center text-gray-500 mt-4">© 2025 NC-Cuchillos. Los mejores cuchillos artesanales de Artigas.</p>
+   </footer>
+  </div>
+ );
 
 };
 
