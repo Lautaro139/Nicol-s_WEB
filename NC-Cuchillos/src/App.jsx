@@ -270,12 +270,13 @@ Nuestro negocio busca que todos esos fanáticos de los cuchillos puedan tener un
         // Tarjetas oscuras con efecto de brillo en hover
       className="bg-gray-800 rounded-xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-red-500/50 border border-gray-700"
         onClick={() => setPreviewKnife(knife)}
+        // onMouseEnter eliminado, me parecio mejor ponerle el onClick, no me gustaba con el MouseEnter
         // onMouseLeave={() => setPreviewKnife(null)} esto no va, es el causante de que las ventanas emergentes pisquen
        >
         <img src={knife.imageUrl} alt={knife.name} className="w-full h-auto object-cover" onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x400/374151/ffffff?text="; }} />
         <div className="p-6 text-center">
          <h2 className="text-xl font-semibold text-white">{knife.name}</h2>
-         <p>Pulsa para mas detalles</p>
+         <p>Pulsa para mas detalles</p> {/* agrego esto para que indicar que es necesario click, se puede quitar si no es necesario, solo borrar esta linea*/}
         </div>
        </div>
       ))}
@@ -286,15 +287,15 @@ Nuestro negocio busca que todos esos fanáticos de los cuchillos puedan tener un
         {previewKnife && (
           <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50">
             <div className="bg-gray-700 rounded-xl p-1 max-w-lg w-full relative shadow-2xl hover:shadow-red-500/50">
+            {/* Cambie el bg-white por bg-gray, agregue el hover:shadow-red-500/50 solo para probar como quedaba*/} 
               <img src={previewKnife.imageUrl} alt={previewKnife.name} className="w-full h-auto rounded-lg" />
               <h3 className="text-3xl font-bold mb-4">{previewKnife.name}</h3>
               <p className="text-lg text-white mb-6">{previewKnife.description}</p>
               <button
-                className="mt-10 px-8 py-2 bg-stone-800 text-white rounded-full hover:bg-stone-900 transition-colors"
-                onClick={() => setPreviewKnife(null)}
-              >
-                Cerrar
-              </button>
+                className="mt-10 px-8 py-2 bg-gray-950 text-white rounded-full hover:bg-stone-900 transition-colors"
+                onClick={() => setPreviewKnife(null)}>
+                  Cerrar
+              </button>{/* Modifique un poco el boton para mejor calidad creo*/}
             </div>
           </div>
         )}
